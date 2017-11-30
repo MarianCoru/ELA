@@ -1,0 +1,43 @@
+﻿@model  Profesor
+
+<h1>
+    Mantenedor de Profesores
+</h1>
+@using (@Html.BeginForm("Ficha", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+    
+    <div class="form-group col-md-7 col-sm-7">
+        <label class="control-label">Rut</label>
+        @Html.TextBoxFor(m => m.rut, null, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group col-md-7 col-sm-7">
+        <label class="control-label">Nombre Completo</label>
+        @Html.TextBoxFor(m => m.nombre, null, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group col-md-7 col-sm-7">
+        <label class="control-label">Titulo</label>
+        @Html.TextBoxFor(m => m.titulo, null, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group col-md-7 col-sm-7">
+        <label class="control-label">Grado Profesional</label>
+        @Html.TextBoxFor(m => m.grado, null, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-1">
+            <button type="reset" class="btn btn-info">
+                Limpiar
+            </button>
+        </div>
+        <div class="col-sm-offset-1 col-sm-1">
+            <button type="submit" class="btn btn-primary">
+                Guardar
+            </button>
+        </div>
+    </div>
+
+}

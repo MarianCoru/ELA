@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Profesor>
+    <h1>
+        Listado de Profesores
+    </h1>
+    @using (Html.BeginForm("Listado", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+    <hr />
+
+    <table class="table-bordered table-hover">
+        <thead>
+        <td>Rut</td>
+        <td>Nombre</td>
+        <td>Titulo</td>
+        <td>Grado</td>
+        </thead>
+
+        @foreach (Profesor profesor in Model)
+
+
+    {
+
+            <tr>
+                <td>@Html.DisplayFor(i => profesor.rut)</td>
+                <td>@Html.DisplayFor(i => profesor.nombre)</td>
+                <td>@Html.DisplayFor(i => profesor.titulo)</td>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="grado">Grado Profesional:</label>
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(m=>m.grado, new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Técnico Superior", Value="Tecnico"},
+                        new SelectListItem{Text="Ingeniero", Value="Ingeniero"},
+                        new SelectListItem{Text="Magister", Value="Magister"},
+                        new SelectListItem{Text="Doctor", Value="Doctor"},
+                    },
+                    new { @class="form-control"}
+                    )
+
+                    </div>
+                </div>
+
+            </tr>
+    }
+    </table>
